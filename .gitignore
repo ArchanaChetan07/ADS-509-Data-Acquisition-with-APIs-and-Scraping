@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment folders
+env/
+venv/
+lyrics_env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# IDE Configurations
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Output files
+*.csv
+*.xlsx
+*.h5
+*.db
+*.sqlite3
+
+# Model and Data Files
+models/
+data/
+
+# Jupyter Notebook Output
+*.ipynb
+
+# OS Generated Files
+desktop.ini
+
+# VS Code Workspace History
+.history/
+
+# Environment Files
+.env
+.env.*
+
+# MacOS Files
+.DS_Store
