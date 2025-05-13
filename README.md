@@ -31,27 +31,20 @@ This project focuses on **web scraping song lyrics** for two selected artists fr
 - OS & Time Libraries (for file handling and delays)
 
 ---
- Output
-CSV File:
-lyrics_dataset.csv containing columns:
 
-Artist
+##  Output
 
-Song_Title
+- **CSV File**:  
+  `lyrics_dataset.csv` containing columns:  
+  - Artist  
+  - Song_Title  
+  - Lyrics  
+  - Album_Year  
+  - Decade  
 
-Lyrics
+---
 
-Album_Year
-
-Decade
-
-Lyrics Text Files:
-Saved under the songs/ directory, organized by artist and decade.
-
-Notes
-Ensure a stable internet connection during scraping to avoid connection errors.
-
-Respect AZLyrics' robots.txt and website scraping policies.
-
-Sleep intervals have been added to reduce server load.
+## Notes
+- Respect AZLyrics' `robots.txt` and website scraping policies.
+- Sleep intervals have been added to reduce server load.
 
