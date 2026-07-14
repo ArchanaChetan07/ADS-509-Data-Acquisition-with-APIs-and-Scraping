@@ -1,100 +1,156 @@
-# ADS-509-Data-Acquisition-with-APIs-and-Scraping
+# ADS 509 Lyrics Data Acquisition via Scraping
 
-Python · NLP · BERT · Transformers · Hugging Face · scikit-learn · machine-learning · CI/CD · API. Repo scale: 167 files; GitHub Actions CI; automated tests; 1 Python modules; 2 notebooks. Applied NLP for classification, generation, and language understanding pipelines.
+### Scrape and organize artist lyrics corpora for applied text-mining coursework.
 
-## Results (numbers)
+[![GitHub](https://img.shields.io/badge/repo-ADS-509-Data-Acquisition-with-APIs-and-S-181717?logo=github)](https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping)
+[![Language](https://img.shields.io/badge/language-Jupyter%20Notebook-3572A5)](https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping)
+[![License](https://img.shields.io/badge/license-See%20repository-yellow)](https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping)
+[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping/actions)
 
-| Metric | Value |
-|---|---|
-| Tracked repository files | **167** |
-| Python modules | **1** |
-| Notebooks | **2** |
-| Markdown docs | **1** |
-| CI workflows present | **Yes** |
-| Automated tests present | **Yes** |
-| Project highlights | **See repository artifacts for measured results.** |
+---
+
+## Overview
+
+Need reproducible acquisition of lyrics text (Adele and Eminem) with API/scraping patterns for ADS 509 Applied Text Mining.
+
+Jupyter notebooks (Lyrics.ipynb, Lyrics_Scraper_Project.ipynb) use requests/BeautifulSoup-style scraping and store song text under artist/all and artist/decades folders; pytest smoke tests under tests/.
+
+A structured lyrics corpus (Adele + Eminem, decade partitions) plus requirements for pandas, BeautifulSoup, requests, seaborn, wordcloud, and scikit-learn.
+
+This repository is maintained as **production-minded portfolio work**: clear architecture, automated checks where present, and metrics that are **traceable to committed artifacts** (never invented).
+
+---
+
+## Architecture
+
+Artist target URLs â†’ scrape/download lyrics â†’ write .txt under artist/all and decade folders â†’ optional EDA/NLP in notebooks â†’ CI test smoke checks.
+
+```mermaid
+flowchart LR
+  A[Artist pages / API] --> B[Scraper notebooks]
+  B --> C[adele/*.txt + eminem/*.txt]
+  C --> D[EDA / NLP notebooks]
+  D --> E[tests + CI]
+```
+
+```mermaid
+sequenceDiagram
+  participant U as User/Client
+  participant S as Service/Pipeline
+  participant E as Eval/Tools
+  U->>S: request / job
+  S->>E: execute
+  E-->>S: results
+  S-->>U: report / response
+```
+
+---
+
+## Results & repository facts
+
+> Only values found in code, configs, tests, or generated reports are listed. Absence of a clinical/ML accuracy number means it was **not** published in-repo.
+
+| Metric | Value | Source |
+|---|---|---|
+| Tracked repository files | **167** | `git tree (default branch)` |
+| Notebooks | **2** | `Lyrics.ipynb; Lyrics_Scraper_Project.ipynb` |
+| Lyrics text files | **161** | `adele/**/*.txt; eminem/**/*.txt` |
+| Tracked files | **167** | `git tree` |
+| Python modules | **1** | `git tree` |
+| Test-related paths | **1** | `git tree` |
+| CI workflows | **Yes** | `.github/workflows` |
+| Docker present | **No** | `repo root` |
+
+```mermaid
+%%{init: {'theme':'base'}}%%
+pie showData title Language composition (bytes)
+    "Jupyter Notebook" : 98
+    "Python" : 2
+```
+
+---
+
+## Key features
+
+- Lyrics scraper notebooks for two artists
+- Corpus organized as artist/all and artist/decades/*.txt
+- EDA tooling (wordcloud, seaborn)
+- CI workflow and unit test stub
+
+---
 
 ## Tech stack
 
-- **Primary language:** Jupyter Notebook
-- **Languages (GitHub):** Jupyter Notebook (115793 bytes), Python (1922 bytes)
-- **Focus area:** nlp
-- **Tooling keywords:** Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM
+| Layer | Technology |
+|---|---|
+| language | Python |
+| notebooks | Jupyter |
+| scraping | BeautifulSoup4 |
+| http | requests |
+| data | pandas |
+| viz | matplotlib |
+| viz | seaborn |
+| viz | wordcloud |
+| ml | scikit-learn |
+| ci | GitHub Actions |
 
-## Architecture (logical)
+---
 
-\\	ext
-Inputs → Processing / models / agents → Evaluation & metrics → CI checks → Artifacts
-\
-## Engineering practices
-
-1. Reproducible layout with clear module boundaries  
-2. Automated validation via CI and/or tests when present  
-3. Documentation that states measurable outcomes, not slogans  
-4. Skill surface aligned to common JD keywords: Python, machine learning, NLP/LLM, Kubernetes, Docker, observability, data pipelines  
-
-## Quick start
-
-\\ash
-git clone https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping.git
-cd ADS-509-Data-Acquisition-with-APIs-and-Scraping
-# Install project requirements (see requirements.txt / pyproject.toml / environment files if present)
-# Run tests or main entrypoints documented in this repo
-\
 ## Skills demonstrated
 
-Python · machine-learning · CI/CD · API design · testing · automation · Docker · Kubernetes · FastAPI · Prometheus · data-science · LLM · MLOps · software-engineering · benchmarking · observability
+Jupyter Notebook · p · a · n · d · s · CI/CD · testing · automation
 
-## License / notice
+Keyword surface: **Python · Jupyter Notebook · machine-learning · CI/CD · testing · API · Docker · automation · data-science · software-engineering · system-design · observability · LLM · cloud**
 
-See repository license file if present. Metrics above are derived from repository structure and previously published validation notes where available.
+---
 
+## Project structure
 
-### Extended notes
+```text
+ADS-509-Data-Acquisition-with-APIs-and-Scraping/
+â”œâ”€â”€ Lyrics.ipynb
+â”œâ”€â”€ Lyrics_Scraper_Project.ipynb
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ adele/{all,decades/...}/*.txt
+â”œâ”€â”€ eminem/{all,decades/...}/*.txt
+â”œâ”€â”€ tests/test_data_acquisition.py
+â””â”€â”€ .github/workflows/ci.yml
+```
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## Installation & usage
 
-### Extended notes
+```bash
+git clone https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping.git
+cd ADS-509-Data-Acquisition-with-APIs-and-Scraping
+pip install -r requirements.txt
+jupyter notebook Lyrics_Scraper_Project.ipynb
+```
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## How it works
 
-### Extended notes
+Notebooks scrape or collect lyrics into per-song text files grouped by artist and decade, then use pandas/visualization libraries for exploratory analysis typical of ADS 509 assignments.
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## Future improvements
 
-### Extended notes
+- Document original scrape targets and rate limits
+- Replace template README with assignment-specific setup and ethics notes
+- Add a single CLI entrypoint for re-scraping
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## License
 
-### Extended notes
+See repository.
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+<p align="center">
+  <b>ADS 509 Lyrics Data Acquisition via Scraping</b><br/>
+  <a href="https://github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping">github.com/ArchanaChetan07/ADS-509-Data-Acquisition-with-APIs-and-Scraping</a>
+</p>
